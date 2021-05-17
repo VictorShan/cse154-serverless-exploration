@@ -1,0 +1,23 @@
+{
+  "name": "cse154-serverless-exploration",
+  "version": "1.0.0",
+  "description": "## Overview In this project, you will create a public chat that will allow users to send messages to a public chatroom that anyone can see.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "firebase deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorShan/cse154-serverless-exploration.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictorShan/cse154-serverless-exploration/issues"
+  },
+  "homepage": "https://github.com/VictorShan/cse154-serverless-exploration#readme",
+  "dependencies": {
+    "firebase": "^8.6.1"
+  }
+}

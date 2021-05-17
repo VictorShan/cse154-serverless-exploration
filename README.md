@@ -1,5 +1,4 @@
 # CSE 154 Spring 2021 Serverless Exploration Session
-Created by Victor Shan
 
 ## Overview
 In this project, you will create a public chat that will allow users to send messages to a public chatroom that anyone can see.
@@ -34,3 +33,8 @@ Well done! Next let's move on to linking this together!
 
 ## Writing the frontend JavaScript
 https://firebase.google.com/docs/database/web/read-and-write
+
+1. Install the Firebase SDK [Instructions](https://firebase.google.com/docs/web/setup)
+    - Run `npm init` and use defaults
+    - Install firebase with `npm i --save firebase`
+    - Import the firebase app and firebase auth

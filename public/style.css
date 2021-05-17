@@ -43,6 +43,11 @@ main {
   align-items: flex-start;
 }
 
+.message .name {
+  font-weight: bolder;
+  margin-right: 1rem;
+}
+
 .message .date {
   margin-left: auto;
 }
