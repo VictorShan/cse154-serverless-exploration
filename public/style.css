@@ -1,0 +1,48 @@
+body {
+
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  height: min(700px, 70vh);
+  width: clamp(350px, 70%, 800px);
+  padding: 10px;
+  border-radius: 10px;
+  background-color: lightgray;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5fr 1fr;
+}
+
+#messages {
+  background-color: white;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+#enter-message {
+  display: grid;
+  grid-template-columns: 9fr minmax(20px, 1fr);
+  grid-template-rows: 1fr;
+}
+
+#enter-message textarea {
+  resize: none;
+  padding: 10px;
+}
+
+.message {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.message .date {
+  margin-left: auto;
+}
