@@ -38,3 +38,25 @@ https://firebase.google.com/docs/database/web/read-and-write
     - Run `npm init` and use defaults
     - Install firebase with `npm i --save firebase`
     - Import the firebase app and firebase auth
+2. Import additonal SDKs [Documentation](https://firebase.google.com/docs/web/setup#from-hosting-urls_1)
+    -
+    ```html
+        <!-- Place these after importing firebase app-->
+        <script src="/__/firebase/8.6.1/firebase-auth.js"></script>
+        <script src="/__/firebase/8.6.1/firebase-database.js"></script>
+    ```
+3. Complete the TODOs [Documentation](https://firebase.google.com/docs/database/web/read-and-write)
+    1. Start with the one one line 7. We want to get the database
+    reference so that and get messages from it.
+    2. `firebaseSetup` function
+        - Listen for new changes!
+        - Create an index in database rules for easy querying
+        - Sign in anonymously
+    3. `handleFormSubmit` function
+        - Push messages to the server
+    4. `quit` function
+        - Stop listening to database changes once the page has closed
+4. Deploy to firebase using `firebase deploy`
+
+## Finished
+You should be able view this on your own site. Please submit an issue.

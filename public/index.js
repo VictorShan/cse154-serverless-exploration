@@ -4,7 +4,8 @@
   window.addEventListener("load", init);
   window.addEventListener("close", quit);
 
-  const DB = firebase.database().ref('chat');
+  // TODO: Update this to the correct database reference
+  const DB = null;
 
   /**
    * Gets messages from firebase and sends
@@ -14,18 +15,26 @@
     id("enter-message").addEventListener("submit", handleFormSubmit);
   }
 
+  /**
+   * Will get data from database, listen for new messages
+   * and sign in anonymously.
+   */
   function firebaseSetup() {
-    DB.orderByChild("time").limitToLast(20).on("child_added", (snapshot) => {
-      let data = snapshot.toJSON();
-      const messages = id("messages");
-      messages.appendChild(genMessage(data.name, data.message, data.time));
-      messages.scrollTop = messages.scrollHeight;
-    });
-    return firebase
-      .auth()
-      .signInAnonymously();
+    // TODO: Get messages from server and listen for new messages
+
+    // TODO: Set up indexing in Realtime Database rules
+
+    // TODO: Sign in anonymously
   }
 
+  /**
+   * Creates a message element that can be displayed in chat
+   * @param {string} name The name of the sender
+   * @param {string} message The message sent by the sender
+   * @param {number} time The time that the message was sent
+   *                      (milliseconds since epoch)
+   * @returns {HTMLElement} A complete message element
+   */
   function genMessage(name, message, time) {
     const messageContainer = gen("div");
     messageContainer.classList.add("message");
@@ -47,6 +56,12 @@
     return messageContainer
   }
 
+  /**
+   * Formats a date object into a string. Changes depending
+   * on whether its the same day or a different day in local time.
+   * @param {Date} date The date that will be formated
+   * @returns The date as a string
+   */
   function formatDate(date) {
     if ((new Date()).toLocaleDateString() !== date.toLocaleDateString()) {
       const dateOptions = {
@@ -79,20 +94,15 @@
     const message = formData.get("message");
 
     // TODO: Send message to server
-    if (message) {
-      DB.push({
-        name: id("username").value || "Anonymous",
-        message,
-        time: Date.now(),
-      })
-    }
 
     qs("#enter-message textarea").value = "";
   }
 
+  /**
+   * Handles cleanup once the page has closed
+   */
   function quit() {
-    // TODO: Handle quitting the page
-    DB.off();
+    // TODO: Stop listening for database changes
   }
 
   function id(elementId) {
