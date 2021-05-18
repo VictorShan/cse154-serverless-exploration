@@ -39,7 +39,7 @@ https://firebase.google.com/docs/database/web/read-and-write
     - Install firebase with `npm i --save firebase`
     - Import the firebase app and firebase auth
 2. Import additonal SDKs [Documentation](https://firebase.google.com/docs/web/setup#from-hosting-urls_1)
-    -
+    - Place this in your HTML
     ```html
         <!-- Place these after importing firebase app-->
         <script src="/__/firebase/8.6.1/firebase-auth.js"></script>
