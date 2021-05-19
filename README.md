@@ -3,7 +3,7 @@
 ## Overview
 In this project, you will create a public chat that will allow users to send messages to a public chatroom that anyone can see.
 
-[Preview of the finished project](cse154-exploration-session-dev.web.app)
+[Preview of the finished project](https://cse154-exploration-session-dev.web.app/)
 
 We will only be using the free tier for firebase so it shouldn't cost any money.
 
@@ -59,4 +59,4 @@ https://firebase.google.com/docs/database/web/read-and-write
 4. Deploy to firebase using `firebase deploy`
 
 ## Finished
-You should be able view this on your own site. Please submit an issue.
+You should be able view this on your own site. Please submit an issue if it does not work.
