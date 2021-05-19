@@ -42,6 +42,11 @@ Well done! Next let's move on to linking this together!
         <script src="/__/firebase/8.6.1/firebase-auth.js"></script>
         <script src="/__/firebase/8.6.1/firebase-database.js"></script>
     ```
+    - Replace original firebase initialization with this
+    ```html
+        <!-- Initialize Firebase -->
+        <script src="/__/firebase/init.js?useEmulator=true"></script>
+    ```
 3. Complete the TODOs. Remember that you can test it out using `firebase emulators:start`. Below is an example of what the data model looks like:
     ```js
     {
@@ -67,6 +72,7 @@ Well done! Next let's move on to linking this together!
         - Listen for new changes and add them to the `#messages` box! (limit to last 20 messages for bonus points!) [Documentation](https://firebase.google.com/docs/database/web/lists-of-data#listen_for_child_events)
         - Create an index in database rules for easy querying [Documentation](https://firebase.google.com/docs/database/security/indexing-data)
         - Sign in anonymously [Documentation](https://firebase.google.com/docs/auth/web/anonymous-auth#authenticate-with-firebase-anonymously)
+        - You can automatically scroll to the bottom message using `messages.scrollTop = messages.scrollHeight;` is messages is `#messages`
     3. `handleFormSubmit` function
         - Push messages to the server [Documentation](https://firebase.google.com/docs/database/web/read-and-write#update_specific_fields)
         - Get the username from the `#username` input tag
