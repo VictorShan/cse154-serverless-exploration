@@ -22,10 +22,10 @@ Although a basic HTML and CSS template have is given, feel free to change it to 
 1. Please go the [Firebase Console](https://firebase.google.com/) to create a new Firebase project.
 2. Create a new project, name it anything you want
 3. Click on the `</>` icon to create a web app
-4. Check the `Firebase Hosting` option and follow the setup process
+4. Check the `Firebase Hosting` option and follow the setup process. Don't use firebase init or deploy just yet.
 5. Go to the left hand side navigation bar and click on the Authentication icon with two people. It should be the third icon after the yellow/orange Firebase logo. Get started by clicking the button and going to the `Sign-in method` tab and enabling anonymous sign in.
 6. Click the server icon two icons below the authentication icon and create a Reatime Database in test mode with any location (preferably near your geographical location)
-7. Run firebase init again but setup `Realtime Database` and `Emulators` instead of just `Hosting`. Follow the message prompts and go with the defaults if unsure.
+7. Run firebase init and setup `Hosting`, `Realtime Database` and `Emulators` instead of just `Hosting`. Follow the message prompts and go with the defaults if unsure.
 8. For emulator setup, please enable `Authentication`, `Realtime Database`, and `Hosting`
 9. Use default ports and download emulators
 
@@ -35,9 +35,7 @@ Well done! Next let's move on to linking this together!
 https://firebase.google.com/docs/database/web/read-and-write
 
 1. Install the Firebase SDK [Instructions](https://firebase.google.com/docs/web/setup)
-    - Run `npm init` and use defaults
-    - Install firebase with `npm i --save firebase`
-    - Import the firebase app and firebase auth
+    - In our case, simply run `npm install`
 2. Import additonal SDKs [Documentation](https://firebase.google.com/docs/web/setup#from-hosting-urls_1)
     - Place this in your HTML
     ```html
@@ -46,16 +44,17 @@ https://firebase.google.com/docs/database/web/read-and-write
         <script src="/__/firebase/8.6.1/firebase-database.js"></script>
     ```
 3. Complete the TODOs [Documentation](https://firebase.google.com/docs/database/web/read-and-write)
-    1. Start with the one one line 7. We want to get the database
+    1. Start with the one one line 7. We want to get the database's chat object ref
     reference so that and get messages from it.
+        - `firebase.database().ref('chat');`
     2. `firebaseSetup` function
-        - Listen for new changes!
-        - Create an index in database rules for easy querying
-        - Sign in anonymously
+        - Listen for new changes! (limit to last 20 messages for bonus points!) [Documentation](https://firebase.google.com/docs/database/web/read-and-write#web_value_events)
+        - Create an index in database rules for easy querying [Documentation](https://firebase.google.com/docs/database/security/indexing-data)
+        - Sign in anonymously [Documentation](https://firebase.google.com/docs/auth/web/anonymous-auth#authenticate-with-firebase-anonymously)
     3. `handleFormSubmit` function
-        - Push messages to the server
+        - Push messages to the server [Documentation](https://firebase.google.com/docs/database/web/read-and-write#update_specific_fields)
     4. `quit` function
-        - Stop listening to database changes once the page has closed
+        - Stop listening to database changes once the page has closed [Documentation](https://firebase.google.com/docs/database/web/read-and-write#detach_listeners)
 4. Deploy to firebase using `firebase deploy`
 
 ## Finished
