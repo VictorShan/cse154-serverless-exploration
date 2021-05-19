@@ -83,5 +83,5 @@ Well done! Next let's move on to linking this together!
         - Stop listening to database changes once the page has closed [Documentation](https://firebase.google.com/docs/database/web/read-and-write#detach_listeners)
 4. Deploy to firebase using `firebase deploy`
 
-## Finished
-You should be able view this on your own site. Please submit an issue if it does not work.
+## Final Thoughts
+You should be able view this on your own site. Please check the master branch for if you get stuck and submit an issue if that doesn't solve your issue.
