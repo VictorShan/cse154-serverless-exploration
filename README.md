@@ -32,7 +32,6 @@ Although a basic HTML and CSS template have is given, feel free to change it to 
 Well done! Next let's move on to linking this together!
 
 ## Writing the frontend JavaScript
-https://firebase.google.com/docs/database/web/read-and-write
 
 1. Install the Firebase SDK [Instructions](https://firebase.google.com/docs/web/setup)
     - In our case, simply run `npm install`
@@ -43,16 +42,37 @@ https://firebase.google.com/docs/database/web/read-and-write
         <script src="/__/firebase/8.6.1/firebase-auth.js"></script>
         <script src="/__/firebase/8.6.1/firebase-database.js"></script>
     ```
-3. Complete the TODOs [Documentation](https://firebase.google.com/docs/database/web/read-and-write)
+3. Complete the TODOs. Remember that you can test it out using `firebase emulators:start`. Below is an example of what the data model looks like:
+    ```js
+    {
+        "chat": {
+            "randomlyGeneratedId1": {
+                "name": "username",
+                "message": "some message",
+                "time": number
+            },
+            "randomlyGeneratedId2": {
+                "name": "username3",
+                "message": "some message",
+                "time": number
+            }
+            // more messages...
+        }
+    }
+    ```
     1. Start with the one one line 7. We want to get the database's chat object ref
     reference so that and get messages from it.
         - `firebase.database().ref('chat');`
     2. `firebaseSetup` function
-        - Listen for new changes! (limit to last 20 messages for bonus points!) [Documentation](https://firebase.google.com/docs/database/web/read-and-write#web_value_events)
+        - Listen for new changes and add them to the `#messages` box! (limit to last 20 messages for bonus points!) [Documentation](https://firebase.google.com/docs/database/web/lists-of-data#listen_for_child_events)
         - Create an index in database rules for easy querying [Documentation](https://firebase.google.com/docs/database/security/indexing-data)
         - Sign in anonymously [Documentation](https://firebase.google.com/docs/auth/web/anonymous-auth#authenticate-with-firebase-anonymously)
     3. `handleFormSubmit` function
         - Push messages to the server [Documentation](https://firebase.google.com/docs/database/web/read-and-write#update_specific_fields)
+        - Get the username from the `#username` input tag
+        - To get the time number user `Date.now()`
+        - Remember to have a default value for the username!
+        - Don't send a message if the message is empty!
     4. `quit` function
         - Stop listening to database changes once the page has closed [Documentation](https://firebase.google.com/docs/database/web/read-and-write#detach_listeners)
 4. Deploy to firebase using `firebase deploy`
